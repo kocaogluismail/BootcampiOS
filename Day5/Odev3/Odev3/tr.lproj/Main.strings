@@ -1,0 +1,24 @@
+
+/* Class = "UIButton"; configuration.title = "12.99$"; ObjectID = "QIt-Qq-79s"; */
+"QIt-Qq-79s.configuration.title" = "150TL";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "QIt-Qq-79s"; */
+"QIt-Qq-79s.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Delivery"; ObjectID = "QyL-dY-Djh"; */
+"QyL-dY-Djh.text" = "Sipariş";
+
+/* Class = "UILabel"; text = "45 min"; ObjectID = "VE8-lZ-xFg"; */
+"VE8-lZ-xFg.text" = "45 dk";
+
+/* Class = "UILabel"; text = "Ingredients:\nGround beef\nHamburger buns\nSliced cheese (commonly cheddar or American)\nLettuce\nTomato slices\nOnion slices (optional)\nPickles (optional)\nCondiments (ketchup, mustard, mayonnaise, etc.)\nSalt and pepper\nCooking oil or butter\n"; ObjectID = "hM7-fW-bRe"; */
+"hM7-fW-bRe.text" = "İçindekiler:\nKıyma\nHamburger ekmeği\nDilimlenmiş peynir (genellikle cheddar veya Amerikan peyniri tercih edilir)\nTurşu (isteğe bağlı)\nSoslar (ketçap, hardal, mayonez, vb.)\nTuz ve karabiber\nPişirme yağı veya tereyağı\n";
+
+/* Class = "UILabel"; text = "Cheese Burger"; ObjectID = "kbx-NU-ao0"; */
+"kbx-NU-ao0.text" = "Peynirli Burger";
+
+/* Class = "UIButton"; configuration.title = "ADD TO CART"; ObjectID = "uNx-Jj-Hmg"; */
+"uNx-Jj-Hmg.configuration.title" = "Sepete Ekle";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "uNx-Jj-Hmg"; */
+"uNx-Jj-Hmg.normalTitle" = "Button";
