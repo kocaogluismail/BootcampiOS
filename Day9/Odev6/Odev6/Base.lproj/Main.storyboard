@@ -73,21 +73,6 @@
             </objects>
             <point key="canvasLocation" x="2812.9770992366412" y="-27.464788732394368"/>
         </scene>
-        <!--Detay Sayfa-->
-        <scene sceneID="vaM-zZ-niw">
-            <objects>
-                <viewController id="9Su-YZ-RB0" customClass="DetaySayfa" customModule="Odev6" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ghH-dK-rfb">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="Mqz-K0-hQz"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Xjp-BU-yaw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3688" y="-27"/>
-        </scene>
         <!--QR ile öde-->
         <scene sceneID="Skv-Eh-h5v">
             <objects>
@@ -102,7 +87,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i4K-Q1-XzA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1886" y="744"/>
+            <point key="canvasLocation" x="940" y="918"/>
         </scene>
         <!--Kartlarım-->
         <scene sceneID="vke-oq-p81">
@@ -118,7 +103,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f5s-Yy-lL5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1021" y="770"/>
+            <point key="canvasLocation" x="1912" y="794"/>
         </scene>
         <!--İşlemler-->
         <scene sceneID="jlb-yc-hsg">
@@ -165,10 +150,10 @@
                     </tabBar>
                     <connections>
                         <segue destination="29d-L4-nU1" kind="relationship" relationship="viewControllers" id="KxH-ib-CFE"/>
-                        <segue destination="v2o-Ly-Ui1" kind="relationship" relationship="viewControllers" id="8MD-2J-n1r"/>
-                        <segue destination="z37-5O-PAH" kind="relationship" relationship="viewControllers" id="gQf-Ey-pGd"/>
-                        <segue destination="Q6o-Ey-xKp" kind="relationship" relationship="viewControllers" id="EQl-7t-Ykc"/>
-                        <segue destination="wLh-kI-965" kind="relationship" relationship="viewControllers" id="LgB-0s-Gyk"/>
+                        <segue destination="z37-5O-PAH" kind="relationship" relationship="viewControllers" id="GRf-YS-nmh"/>
+                        <segue destination="v2o-Ly-Ui1" kind="relationship" relationship="viewControllers" id="Zuz-kH-zxp"/>
+                        <segue destination="Q6o-Ey-xKp" kind="relationship" relationship="viewControllers" id="hzT-zf-998"/>
+                        <segue destination="wLh-kI-965" kind="relationship" relationship="viewControllers" id="gWs-Fg-dcN"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cgt-oo-FT2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

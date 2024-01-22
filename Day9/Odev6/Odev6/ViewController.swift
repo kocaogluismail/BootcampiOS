@@ -88,6 +88,17 @@ extension ViewController: UICollectionViewDelegate,UICollectionViewDataSource {
         return hucre
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let baslik = basliklarListesi[indexPath.row]
+        performSegue(withIdentifier: "toDetay", sender: baslik)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetay" {
+            if let baslik = sender as? Basliklar {
+                let gidilecekVC = segue.destination as! DetaySayfa
+                gidilecekVC.baslik = baslik
+            }
+        }
+    }
 }
 

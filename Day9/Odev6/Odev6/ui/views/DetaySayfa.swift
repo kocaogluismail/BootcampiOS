@@ -9,10 +9,20 @@ import UIKit
 
 class DetaySayfa: UIViewController {
 
+    @IBOutlet weak var imageViewFilm: UIImageView!
+    @IBOutlet weak var labelKullanim: UILabel!
+    @IBOutlet weak var labelAciklama: UILabel!
+    
+    var baslik:Basliklar?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        if let b = baslik {
+            labelAciklama.text = b.description
+            imageViewFilm.image = UIImage(named: b.resim!)
+            labelKullanim.text=("\(b.kullanim!)")
+        }
     }
     
 
