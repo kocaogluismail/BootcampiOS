@@ -102,7 +102,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i4K-Q1-XzA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1027" y="737"/>
+            <point key="canvasLocation" x="1886" y="744"/>
         </scene>
         <!--Kartlarım-->
         <scene sceneID="vke-oq-p81">
@@ -118,7 +118,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f5s-Yy-lL5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1918" y="726"/>
+            <point key="canvasLocation" x="1021" y="770"/>
         </scene>
         <!--İşlemler-->
         <scene sceneID="jlb-yc-hsg">
@@ -136,6 +136,22 @@
             </objects>
             <point key="canvasLocation" x="-94" y="1013"/>
         </scene>
+        <!--Bul-->
+        <scene sceneID="sXm-8j-4d1">
+            <objects>
+                <viewController id="wLh-kI-965" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EwI-uE-c8T">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Uq6-sv-W9j"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Bul" image="location.north.circle.fill" catalog="system" id="aT0-qB-LdR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JJY-W5-VvB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-347" y="135"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="kb8-i4-qA6">
             <objects>
@@ -143,6 +159,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="IuB-Fq-RWw"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Dcj-rC-nSZ">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -151,6 +168,7 @@
                         <segue destination="v2o-Ly-Ui1" kind="relationship" relationship="viewControllers" id="8MD-2J-n1r"/>
                         <segue destination="z37-5O-PAH" kind="relationship" relationship="viewControllers" id="gQf-Ey-pGd"/>
                         <segue destination="Q6o-Ey-xKp" kind="relationship" relationship="viewControllers" id="EQl-7t-Ykc"/>
+                        <segue destination="wLh-kI-965" kind="relationship" relationship="viewControllers" id="LgB-0s-Gyk"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cgt-oo-FT2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -184,6 +202,7 @@
         <image name="heart.circle.fill" catalog="system" width="128" height="123"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="kitapci" width="506" height="880"/>
+        <image name="location.north.circle.fill" catalog="system" width="128" height="123"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="qrcode" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">
