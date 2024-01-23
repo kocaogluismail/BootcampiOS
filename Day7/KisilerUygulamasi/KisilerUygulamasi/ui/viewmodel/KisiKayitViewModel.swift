@@ -11,6 +11,6 @@ class KisiKayitViewModel {
     var krepo = KisilerDaoRepository()
     
     func kaydet(kisi_ad:String,kisi_tel:String){
-        print("Kişi Kaydet: \(kisi_ad) - \(kisi_tel)")
+        krepo.kaydet(kisi_ad: kisi_ad, kisi_tel: kisi_tel)
     }
 }
