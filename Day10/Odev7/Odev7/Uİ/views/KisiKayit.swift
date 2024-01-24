@@ -9,7 +9,8 @@ import UIKit
 
 class KisiKayit: UIViewController {
 
-    @IBOutlet weak var tfKisiAd: UILabel!
+   
+    @IBOutlet weak var tfKisiAd: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,12 @@ class KisiKayit: UIViewController {
 
   
     @IBAction func buttonKaydet(_ sender: Any) {
+        if let ka = tfKisiAd.text {
+            kaydet(kisi_ad: ka)
+        }
+    }
+    func kaydet(kisi_ad:String) {
+        print("Kişi Kaydet:\(kisi_ad)")
     }
     
 }
