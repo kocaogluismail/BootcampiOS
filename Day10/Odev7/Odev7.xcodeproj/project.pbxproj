@@ -21,6 +21,13 @@
 		BF5D10F72B60522700E165FD /* KisiDetay.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5D10F62B60522700E165FD /* KisiDetay.swift */; };
 		BF5D10FC2B60525400E165FD /* Kisiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5D10FB2B60525400E165FD /* Kisiler.swift */; };
 		BF5D10FE2B60527D00E165FD /* KisilerDaRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5D10FD2B60527D00E165FD /* KisilerDaRepository.swift */; };
+		BF8A1DE92B619AC10078180D /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BF8A1DE82B619AC10078180D /* RxSwift */; };
+		BF8A1DFE2B61A28C0078180D /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8A1DF32B61A28B0078180D /* FMDatabasePool.m */; };
+		BF8A1DFF2B61A28C0078180D /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8A1DF42B61A28B0078180D /* FMDatabase.m */; };
+		BF8A1E002B61A28C0078180D /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8A1DF52B61A28B0078180D /* FMDatabaseQueue.m */; };
+		BF8A1E012B61A28C0078180D /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8A1DFA2B61A28B0078180D /* FMDatabaseAdditions.m */; };
+		BF8A1E022B61A28C0078180D /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8A1DFC2B61A28B0078180D /* FMResultSet.m */; };
+		BF8A1E082B61A5420078180D /* toDoList.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = BF8A1E072B61A5420078180D /* toDoList.sqlite */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +47,20 @@
 		BF5D10F62B60522700E165FD /* KisiDetay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KisiDetay.swift; sourceTree = "<group>"; };
 		BF5D10FB2B60525400E165FD /* Kisiler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kisiler.swift; sourceTree = "<group>"; };
 		BF5D10FD2B60527D00E165FD /* KisilerDaRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KisilerDaRepository.swift; sourceTree = "<group>"; };
+		BF8A1DF12B61A24A0078180D /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		BF8A1DF22B61A28B0078180D /* Odev7-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Odev7-Bridging-Header.h"; sourceTree = "<group>"; };
+		BF8A1DF32B61A28B0078180D /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		BF8A1DF42B61A28B0078180D /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		BF8A1DF52B61A28B0078180D /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		BF8A1DF62B61A28B0078180D /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		BF8A1DF72B61A28B0078180D /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		BF8A1DF82B61A28B0078180D /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		BF8A1DF92B61A28B0078180D /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		BF8A1DFA2B61A28B0078180D /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		BF8A1DFB2B61A28B0078180D /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		BF8A1DFC2B61A28B0078180D /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		BF8A1DFD2B61A28C0078180D /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		BF8A1E072B61A5420078180D /* toDoList.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = toDoList.sqlite; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF8A1DE92B619AC10078180D /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +80,7 @@
 			children = (
 				BF5D10D32B604ED900E165FD /* Odev7 */,
 				BF5D10D22B604ED900E165FD /* Products */,
+				BF8A1DF02B61A24A0078180D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,6 +103,19 @@
 				BF5D10DD2B604EDA00E165FD /* Assets.xcassets */,
 				BF5D10DF2B604EDA00E165FD /* LaunchScreen.storyboard */,
 				BF5D10E22B604EDA00E165FD /* Info.plist */,
+				BF8A1DFB2B61A28B0078180D /* FMDatabase.h */,
+				BF8A1DF42B61A28B0078180D /* FMDatabase.m */,
+				BF8A1DF72B61A28B0078180D /* FMDatabaseAdditions.h */,
+				BF8A1DFA2B61A28B0078180D /* FMDatabaseAdditions.m */,
+				BF8A1DF92B61A28B0078180D /* FMDatabasePool.h */,
+				BF8A1DF32B61A28B0078180D /* FMDatabasePool.m */,
+				BF8A1DFD2B61A28C0078180D /* FMDatabaseQueue.h */,
+				BF8A1DF52B61A28B0078180D /* FMDatabaseQueue.m */,
+				BF8A1DF62B61A28B0078180D /* FMDB.h */,
+				BF8A1DF82B61A28B0078180D /* FMResultSet.h */,
+				BF8A1DFC2B61A28B0078180D /* FMResultSet.m */,
+				BF8A1DF22B61A28B0078180D /* Odev7-Bridging-Header.h */,
+				BF8A1E072B61A5420078180D /* toDoList.sqlite */,
 			);
 			path = Odev7;
 			sourceTree = "<group>";
@@ -148,6 +184,14 @@
 			path = entity;
 			sourceTree = "<group>";
 		};
+		BF8A1DF02B61A24A0078180D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BF8A1DF12B61A24A0078180D /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -164,6 +208,9 @@
 			dependencies = (
 			);
 			name = Odev7;
+			packageProductDependencies = (
+				BF8A1DE82B619AC10078180D /* RxSwift */,
+			);
 			productName = Odev7;
 			productReference = BF5D10D12B604ED900E165FD /* Odev7.app */;
 			productType = "com.apple.product-type.application";
@@ -180,6 +227,7 @@
 				TargetAttributes = {
 					BF5D10D02B604ED900E165FD = {
 						CreatedOnToolsVersion = 15.2;
+						LastSwiftMigration = 1520;
 					};
 				};
 			};
@@ -192,6 +240,9 @@
 				Base,
 			);
 			mainGroup = BF5D10C82B604ED900E165FD;
+			packageReferences = (
+				BF8A1DDB2B619AC10078180D /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = BF5D10D22B604ED900E165FD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -207,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF5D10E12B604EDA00E165FD /* LaunchScreen.storyboard in Resources */,
+				BF8A1E082B61A5420078180D /* toDoList.sqlite in Resources */,
 				BF5D10DE2B604EDA00E165FD /* Assets.xcassets in Resources */,
 				BF5D10DC2B604ED900E165FD /* Main.storyboard in Resources */,
 			);
@@ -220,8 +272,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF5D10D92B604ED900E165FD /* Anasayfa.swift in Sources */,
+				BF8A1DFE2B61A28C0078180D /* FMDatabasePool.m in Sources */,
+				BF8A1DFF2B61A28C0078180D /* FMDatabase.m in Sources */,
+				BF8A1E002B61A28C0078180D /* FMDatabaseQueue.m in Sources */,
 				BF5D10F72B60522700E165FD /* KisiDetay.swift in Sources */,
 				BF5D10FE2B60527D00E165FD /* KisilerDaRepository.swift in Sources */,
+				BF8A1E022B61A28C0078180D /* FMResultSet.m in Sources */,
 				BF5D10F22B6051DF00E165FD /* KisilerHucre.swift in Sources */,
 				BF5D10D52B604ED900E165FD /* AppDelegate.swift in Sources */,
 				BF5D10EF2B6051A200E165FD /* KisiDetayViewModel.swift in Sources */,
@@ -230,6 +286,7 @@
 				BF5D10D72B604ED900E165FD /* SceneDelegate.swift in Sources */,
 				BF5D10ED2B60518800E165FD /* KisiKayitViewModel.swift in Sources */,
 				BF5D10FC2B60525400E165FD /* Kisiler.swift in Sources */,
+				BF8A1E012B61A28C0078180D /* FMDatabaseAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +436,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = MN2C4KUDVN;
@@ -398,6 +456,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.SpotifyTemplate.Odev7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Odev7/Odev7-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -408,6 +468,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = MN2C4KUDVN;
@@ -427,6 +488,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.SpotifyTemplate.Odev7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Odev7/Odev7-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -454,6 +516,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BF8A1DDB2B619AC10078180D /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BF8A1DE82B619AC10078180D /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BF8A1DDB2B619AC10078180D /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BF5D10C92B604ED900E165FD /* Project object */;
 }

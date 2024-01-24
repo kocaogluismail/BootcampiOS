@@ -9,6 +9,7 @@ import UIKit
 
 class KisilerHucre: UITableViewCell {
 
+    @IBOutlet weak var labelKisiAd: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

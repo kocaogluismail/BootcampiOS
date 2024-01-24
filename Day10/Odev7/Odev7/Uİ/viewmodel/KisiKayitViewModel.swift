@@ -8,5 +8,9 @@
 import Foundation
 
 class KisiKayitViewModel {
+    var krepo = KisilerDaRepository()
     
+    func kaydet(kisi_ad:String) {
+        krepo.kaydet(kisi_ad:kisi_ad)
+    }
 }
