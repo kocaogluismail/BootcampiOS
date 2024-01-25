@@ -7,96 +7,54 @@
 
 import Foundation
 import RxSwift
+import CoreData
 
 class KisilerDaoRepository {
     
-    var kisilerListesi = BehaviorSubject<[Kisiler]>(value: [Kisiler]())
+    var kisilerListesi = BehaviorSubject<[KisilerModel]>(value: [KisilerModel]())
     
-    let db:FMDatabase?
     
-    init(){
-        let hedefYol = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
-        let veritabaniURL = URL(fileURLWithPath: hedefYol).appendingPathComponent("rehber.sqlite")
-        db = FMDatabase(path: veritabaniURL.path)
-    }
+    let context = appDelegate.persistentContainer.viewContext
     
     func kaydet(kisi_ad:String,kisi_tel:String){
-        db?.open()
+       let kisi = KisilerModel(context: context)
+        kisi.kisi_ad = kisi_ad
+        kisi.kisi_tel = kisi_tel
         
-        do{
-            try db!.executeUpdate("INSERT INTO kisiler (kisi_ad,kisi_tel) VALUES (?,?)", values: [kisi_ad,kisi_tel])
-        }catch{
-            print(error.localizedDescription)
-        }
-        
-        db?.close()
+        appDelegate.saveContext()
     }
-    
-    func guncelle(kisi_id:Int,kisi_ad:String,kisi_tel:String) {
-        db?.open()
-        
-        do{
-            try db!.executeUpdate("UPDATE kisiler SET kisi_ad = ?,kisi_tel = ? WHERE kisi_id = ?", values: [kisi_ad,kisi_tel,kisi_id])
-        }catch{
-            print(error.localizedDescription)
-        }
-        
-        db?.close()
+    func guncelle(kisi:KisilerModel,kisi_ad:String,kisi_tel:String) {
+        kisi.kisi_ad = kisi_ad
+        kisi.kisi_tel = kisi_tel
+        appDelegate.saveContext()
     }
-    func sil(kisi_id:Int) {
-        db?.open()
-        
-        do{
-            try db!.executeUpdate("DELETE FROM kisiler WHERE kisi_id = ?", values: [kisi_id])
-            kisileriYukle()
-        }catch{
-            print(error.localizedDescription)
-        }
-        
-        db?.close()
+    func sil(kisi:KisilerModel) {
+        context.delete(kisi)
+        appDelegate.saveContext()
+        kisileriYukle()
     }
     
     func ara(aramaKelimesi:String) {
-        db?.open()
-        var liste = [Kisiler]()
-        
-        
         do{
-            let rs = try db!.executeQuery("SELECT * FROM kisiler WHERE kisi_ad like '%\(aramaKelimesi)%'", values: nil)
-            while rs.next() {
-                let kisi = Kisiler(kisi_id: Int(rs.string(forColumn: "kisi_id"))!,
-                                   kisi_ad: rs.string(forColumn: "kisi_ad")!,
-                                   kisi_tel: rs.string(forColumn: "kisi_tel")!)
-                liste.append(kisi)
-            }
-            kisilerListesi.onNext(liste)//Te
-            
+            let fr = KisilerModel.fetchRequest()
+            fr.predicate = NSPredicate(format: "kisi_ad CONTAINS[c] %@", aramaKelimesi)
+            let liste = try context.fetch(fr)
+            kisilerListesi.onNext(liste)
         }catch{
             print(error.localizedDescription)
         }
-        db?.close()
 
     }
     
     func kisileriYukle(){
-        db?.open()
-        var liste = [Kisiler]()
-        
-        
         do{
-            let rs = try db!.executeQuery("SELECT * FROM kisiler", values: nil)
-            while rs.next() {
-                let kisi = Kisiler(kisi_id: Int(rs.string(forColumn: "kisi_id"))!,
-                                   kisi_ad: rs.string(forColumn: "kisi_ad")!,
-                                   kisi_tel: rs.string(forColumn: "kisi_tel")!)
-                liste.append(kisi)
-            }
-            kisilerListesi.onNext(liste)//Te
-            
+            let liste = try context.fetch(KisilerModel.fetchRequest())
+            kisilerListesi.onNext(liste)
         }catch{
             print(error.localizedDescription)
         }
-        db?.close()
+       
+       // kisilerListesi.onNext(liste)//Tetikleme
     }
     
 }

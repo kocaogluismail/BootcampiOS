@@ -12,7 +12,7 @@ class Anasayfa: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     
     @IBOutlet weak var kisilerTableView: UITableView!
-    var kisilerListesi = [Kisiler]()
+    var kisilerListesi = [KisilerModel]()
     
     var viewModel = AnasayfaViewModel()
     
@@ -35,7 +35,7 @@ class Anasayfa: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDetay" {
-            if let kisi = sender as? Kisiler {
+            if let kisi = sender as? KisilerModel {
                 let gidilecekVC = segue.destination as! KisiDetay
                 gidilecekVC.kisi = kisi
             }
@@ -48,7 +48,11 @@ class Anasayfa: UIViewController {
 extension Anasayfa: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        viewModel.ara(aramaKelimesi: searchText)
+        if searchText == "" {
+            viewModel.kisileriYukle()
+        }else {
+            viewModel.ara(aramaKelimesi: searchText)
+        }
     }
 }
 extension Anasayfa : UITableViewDelegate,UITableViewDataSource {
@@ -84,7 +88,7 @@ extension Anasayfa : UITableViewDelegate,UITableViewDataSource {
             alert.addAction(iptalAction)
             
             let evetAction = UIAlertAction(title: "Evet", style: .destructive) { action in
-                self.viewModel.sil(kisi_id: kisi.kisi_id!)
+                self.viewModel.sil(kisi: kisi)
             }
             alert.addAction(evetAction)
             self.present(alert, animated: true)
