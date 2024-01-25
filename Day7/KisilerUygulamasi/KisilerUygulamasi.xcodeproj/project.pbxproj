@@ -12,7 +12,9 @@
 		BF8D95FC2B5D6CA6009E9514 /* AnasayfaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8D95FB2B5D6CA6009E9514 /* AnasayfaViewModel.swift */; };
 		BF8D95FE2B5D6CC0009E9514 /* KisiKayitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8D95FD2B5D6CC0009E9514 /* KisiKayitViewModel.swift */; };
 		BF8D96002B5D6CD6009E9514 /* KisiDetayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8D95FF2B5D6CD6009E9514 /* KisiDetayViewModel.swift */; };
-		BF99B4A02B629BC200EA510F /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF99B49E2B629BC200EA510F /* Model.xcdatamodeld */; };
+		BF99B4A32B62AC3100EA510F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = BF99B4A22B62AC3100EA510F /* Alamofire */; };
+		BF99B4A52B62AC8900EA510F /* CRUDCevap.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF99B4A42B62AC8900EA510F /* CRUDCevap.swift */; };
+		BF99B4A72B62AD2500EA510F /* KisilerCevap.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF99B4A62B62AD2500EA510F /* KisilerCevap.swift */; };
 		BFA0E51D2B5C11B1007CCD5E /* KisilerHucre.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA0E51C2B5C11B1007CCD5E /* KisilerHucre.swift */; };
 		BFA395CA2B57165B00AC6161 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA395C92B57165B00AC6161 /* AppDelegate.swift */; };
 		BFA395CC2B57165B00AC6161 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA395CB2B57165B00AC6161 /* SceneDelegate.swift */; };
@@ -30,7 +32,8 @@
 		BF8D95FB2B5D6CA6009E9514 /* AnasayfaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnasayfaViewModel.swift; sourceTree = "<group>"; };
 		BF8D95FD2B5D6CC0009E9514 /* KisiKayitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KisiKayitViewModel.swift; sourceTree = "<group>"; };
 		BF8D95FF2B5D6CD6009E9514 /* KisiDetayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KisiDetayViewModel.swift; sourceTree = "<group>"; };
-		BF99B49F2B629BC200EA510F /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		BF99B4A42B62AC8900EA510F /* CRUDCevap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CRUDCevap.swift; path = "../../../../../../../.Trash/KisilerUygulamasi 17.46.41/KisilerUygulamasi/data/entity/CRUDCevap.swift"; sourceTree = "<group>"; };
+		BF99B4A62B62AD2500EA510F /* KisilerCevap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KisilerCevap.swift; sourceTree = "<group>"; };
 		BFA0E51C2B5C11B1007CCD5E /* KisilerHucre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KisilerHucre.swift; sourceTree = "<group>"; };
 		BFA395C62B57165B00AC6161 /* KisilerUygulamasi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KisilerUygulamasi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFA395C92B57165B00AC6161 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +54,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF8D95F02B5D6C16009E9514 /* RxSwift in Frameworks */,
+				BF99B4A32B62AC3100EA510F /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,7 +114,6 @@
 				BFA395D22B57165C00AC6161 /* Assets.xcassets */,
 				BFA395D42B57165C00AC6161 /* LaunchScreen.storyboard */,
 				BFA395D72B57165C00AC6161 /* Info.plist */,
-				BF99B49E2B629BC200EA510F /* Model.xcdatamodeld */,
 			);
 			path = KisilerUygulamasi;
 			sourceTree = "<group>";
@@ -138,6 +141,8 @@
 			isa = PBXGroup;
 			children = (
 				BFA395E52B57177700AC6161 /* Kisiler.swift */,
+				BF99B4A42B62AC8900EA510F /* CRUDCevap.swift */,
+				BF99B4A62B62AD2500EA510F /* KisilerCevap.swift */,
 			);
 			path = entity;
 			sourceTree = "<group>";
@@ -170,6 +175,7 @@
 			name = KisilerUygulamasi;
 			packageProductDependencies = (
 				BF8D95EF2B5D6C16009E9514 /* RxSwift */,
+				BF99B4A22B62AC3100EA510F /* Alamofire */,
 			);
 			productName = KisilerUygulamasi;
 			productReference = BFA395C62B57165B00AC6161 /* KisilerUygulamasi.app */;
@@ -201,6 +207,7 @@
 			mainGroup = BFA395BD2B57165B00AC6161;
 			packageReferences = (
 				BF8D95E22B5D6C16009E9514 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				BF99B4A12B62AC3100EA510F /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = BFA395C72B57165B00AC6161 /* Products */;
 			projectDirPath = "";
@@ -236,11 +243,12 @@
 				BF8D95F92B5D6C7A009E9514 /* KisilerDaoRepository.swift in Sources */,
 				BF8D95FE2B5D6CC0009E9514 /* KisiKayitViewModel.swift in Sources */,
 				BF8D96002B5D6CD6009E9514 /* KisiDetayViewModel.swift in Sources */,
+				BF99B4A52B62AC8900EA510F /* CRUDCevap.swift in Sources */,
 				BF8D95FC2B5D6CA6009E9514 /* AnasayfaViewModel.swift in Sources */,
+				BF99B4A72B62AD2500EA510F /* KisilerCevap.swift in Sources */,
 				BFA395CA2B57165B00AC6161 /* AppDelegate.swift in Sources */,
 				BFA395CC2B57165B00AC6161 /* SceneDelegate.swift in Sources */,
 				BFA395E62B57177700AC6161 /* Kisiler.swift in Sources */,
-				BF99B4A02B629BC200EA510F /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,6 +481,14 @@
 				minimumVersion = 6.6.0;
 			};
 		};
+		BF99B4A12B62AC3100EA510F /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -481,20 +497,12 @@
 			package = BF8D95E22B5D6C16009E9514 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
 		};
-/* End XCSwiftPackageProductDependency section */
-
-/* Begin XCVersionGroup section */
-		BF99B49E2B629BC200EA510F /* Model.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				BF99B49F2B629BC200EA510F /* Model.xcdatamodel */,
-			);
-			currentVersion = BF99B49F2B629BC200EA510F /* Model.xcdatamodel */;
-			path = Model.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
+		BF99B4A22B62AC3100EA510F /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BF99B4A12B62AC3100EA510F /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
-/* End XCVersionGroup section */
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BFA395BE2B57165B00AC6161 /* Project object */;
 }

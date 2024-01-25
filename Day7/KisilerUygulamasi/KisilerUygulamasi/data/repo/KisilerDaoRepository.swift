@@ -7,54 +7,35 @@
 
 import Foundation
 import RxSwift
-import CoreData
 
 class KisilerDaoRepository {
     
-    var kisilerListesi = BehaviorSubject<[KisilerModel]>(value: [KisilerModel]())
-    
-    
-    let context = appDelegate.persistentContainer.viewContext
-    
+    var kisilerListesi = BehaviorSubject<[Kisiler]>(value: [Kisiler]())
     func kaydet(kisi_ad:String,kisi_tel:String){
-       let kisi = KisilerModel(context: context)
-        kisi.kisi_ad = kisi_ad
-        kisi.kisi_tel = kisi_tel
-        
-        appDelegate.saveContext()
+        print("Kişi Kaydet: \(kisi_ad) - \(kisi_tel)")
     }
-    func guncelle(kisi:KisilerModel,kisi_ad:String,kisi_tel:String) {
-        kisi.kisi_ad = kisi_ad
-        kisi.kisi_tel = kisi_tel
-        appDelegate.saveContext()
+    func guncelle(kisi_id:Int,kisi_ad:String,kisi_tel:String) {
+        print("Kişi Günceller : \(kisi_id) - \(kisi_ad) - \(kisi_tel)")
     }
-    func sil(kisi:KisilerModel) {
-        context.delete(kisi)
-        appDelegate.saveContext()
+    func sil(kisi_id:Int) {
+        print("Kişi Sil : \(kisi_id)")
         kisileriYukle()
     }
     
     func ara(aramaKelimesi:String) {
-        do{
-            let fr = KisilerModel.fetchRequest()
-            fr.predicate = NSPredicate(format: "kisi_ad CONTAINS[c] %@", aramaKelimesi)
-            let liste = try context.fetch(fr)
-            kisilerListesi.onNext(liste)
-        }catch{
-            print(error.localizedDescription)
-        }
+        print("Kişi Ara: \(aramaKelimesi)")
 
     }
     
     func kisileriYukle(){
-        do{
-            let liste = try context.fetch(KisilerModel.fetchRequest())
-            kisilerListesi.onNext(liste)
-        }catch{
-            print(error.localizedDescription)
-        }
-       
-       // kisilerListesi.onNext(liste)//Tetikleme
+        var liste = [Kisiler]()
+        let k1 = Kisiler(kisi_id: "1", kisi_ad: "Ahmet", kisi_tel: "1111")
+        let k2 = Kisiler(kisi_id: "2", kisi_ad: "İsmail", kisi_tel: "2222")
+        let k3 = Kisiler(kisi_id: "3", kisi_ad: "Ayşe", kisi_tel: "3333")
+        liste.append(k1)
+        liste.append(k2)
+        liste.append(k3)
+        kisilerListesi.onNext(liste)//Tetikleme
     }
     
 }
