@@ -24,10 +24,7 @@ class Anasayfa: UIViewController {
         
         _ = viewModel.kisilerListesi.subscribe(onNext: { liste in
             self.kisilerListesi = liste
-            DispatchQueue.main.async {
-                self.kisilerTableView.reloadData()
-            }
-            
+            self.kisilerTableView.reloadData()
         })
         
     }
@@ -87,7 +84,7 @@ extension Anasayfa : UITableViewDelegate,UITableViewDataSource {
             alert.addAction(iptalAction)
             
             let evetAction = UIAlertAction(title: "Evet", style: .destructive) { action in
-                self.viewModel.sil(kisi_id: Int(kisi.kisi_id!)!)
+                self.viewModel.sil(kisi_id: kisi.kisi_id!)
             }
             alert.addAction(evetAction)
             self.present(alert, animated: true)

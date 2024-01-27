@@ -7,92 +7,35 @@
 
 import Foundation
 import RxSwift
-import Alamofire
 
 class KisilerDaoRepository {
     
     var kisilerListesi = BehaviorSubject<[Kisiler]>(value: [Kisiler]())
     func kaydet(kisi_ad:String,kisi_tel:String){
-        
-        let params:Parameters = ["kisi_ad":kisi_ad,"kisi_tel":kisi_tel]
-        AF.request("http://kasimadalan.pe.hu/kisiler/insert_kisiler.php",method: .post,parameters: params).response { response in
-            if let data = response.data {
-                do{
-                    let cevap = try JSONDecoder().decode(CRUDCevap.self, from: data)
-                    print("Başarı:\(cevap.success!)")
-                    print("Mesaj: \(cevap.message!)")
-                }catch{
-                    print(error.localizedDescription)
-                }
-            }
-            
-        }
+        print("Kişi Kaydet: \(kisi_ad) - \(kisi_tel)")
     }
-    func guncelle(kisi_id:Int,kisi_ad:String,kisi_tel:String) {
-        let params:Parameters = ["kisi_id":kisi_id,"kisi_ad":kisi_ad,"kisi_tel":kisi_tel]
-        AF.request("http://kasimadalan.pe.hu/kisiler/update_kisiler.php",method: .post,parameters: params).response { response in
-            if let data = response.data {
-                do{
-                    let cevap = try JSONDecoder().decode(CRUDCevap.self, from: data)
-                    print("Başarı:\(cevap.success!)")
-                    print("Mesaj: \(cevap.message!)")
-                }catch{
-                    print(error.localizedDescription)
-                }
-            }
-            
-        }
+    func guncelle(kisi_id:String,kisi_ad:String,kisi_tel:String) {
+        print("Kişi Günceller : \(kisi_id) - \(kisi_ad) - \(kisi_tel)")
     }
-    func sil(kisi_id:Int) {
-        let params:Parameters = ["kisi_id":kisi_id]
-        AF.request("http://kasimadalan.pe.hu/kisiler/delete_kisiler.php",method: .post,parameters: params).response { response in
-            if let data = response.data {
-                do{
-                    let cevap = try JSONDecoder().decode(CRUDCevap.self, from: data)
-                    print("Başarı:\(cevap.success!)")
-                    print("Mesaj: \(cevap.message!)")
-                    self.kisileriYukle()
-                }catch{
-                    print(error.localizedDescription)
-                }
-            }
-            
-        }
+    func sil(kisi_id:String) {
+        print("Kişi Sil : \(kisi_id)")
+        kisileriYukle()
     }
     
     func ara(aramaKelimesi:String) {
-        let params:Parameters = ["kisi_ad":aramaKelimesi]
-        AF.request("http://kasimadalan.pe.hu/kisiler/tum_kisiler_arama.php",method: .post,parameters: params).response { response in
-            if let data = response.data {
-                do{
-                    let cevap = try JSONDecoder().decode(KisilerCevap.self, from: data)
-                    if let liste = cevap.kisiler {
-                        self.kisilerListesi.onNext(liste)
-                    }
-                }catch{
-                    print(error.localizedDescription)
-                }
-            }
-            
-        }
+        print("Kişi Ara: \(aramaKelimesi)")
+
     }
     
     func kisileriYukle(){
-        AF.request("http://kasimadalan.pe.hu/kisiler/tum_kisiler.php",method: .get).response { response in
-            if let data = response.data {
-                do{
-                    let cevap = try JSONDecoder().decode(KisilerCevap.self, from: data)
-                    if let liste = cevap.kisiler {
-                        self.kisilerListesi.onNext(liste)
-                    }
-                }catch{
-                    print(error.localizedDescription)
-                }
-            }
-            
-        }
-       
-       // kisilerListesi.onNext(liste)//Tetikleme
+        var liste = [Kisiler]()
+        let k1 = Kisiler(kisi_id: "1", kisi_ad: "Ahmet", kisi_tel: "1111")
+        let k2 = Kisiler(kisi_id: "2", kisi_ad: "İsmail", kisi_tel: "2222")
+        let k3 = Kisiler(kisi_id: "3", kisi_ad: "Ayşe", kisi_tel: "3333")
+        liste.append(k1)
+        liste.append(k2)
+        liste.append(k3)
+        kisilerListesi.onNext(liste)//Tetikleme
     }
     
 }
