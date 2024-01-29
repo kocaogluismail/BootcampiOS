@@ -24,14 +24,12 @@ class Anasayfa: UIViewController {
         
         _ = viewModel.kisilerListesi.subscribe(onNext: { liste in
             self.kisilerListesi = liste
-            self.kisilerTableView.reloadData()
+            DispatchQueue.main.async {
+                self.kisilerTableView.reloadData()
+            }
         })
         
     }
-    override func viewWillAppear(_ animated: Bool) {
-        viewModel.kisileriYukle()
-    }
- 
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDetay" {
@@ -48,7 +46,16 @@ class Anasayfa: UIViewController {
 extension Anasayfa: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        viewModel.ara(aramaKelimesi: searchText)
+        
+        if searchText == "" {
+            
+            viewModel.kisileriYukle()
+            
+        }else {
+            viewModel.ara(aramaKelimesi: searchText)
+        }
+        
+        
     }
 }
 extension Anasayfa : UITableViewDelegate,UITableViewDataSource {

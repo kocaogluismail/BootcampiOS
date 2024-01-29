@@ -7,35 +7,72 @@
 
 import Foundation
 import RxSwift
+import FirebaseFirestore
 
 class KisilerDaoRepository {
     
     var kisilerListesi = BehaviorSubject<[Kisiler]>(value: [Kisiler]())
+    var collectionKisiler = Firestore.firestore().collection("Kisiler")
+    
+    
     func kaydet(kisi_ad:String,kisi_tel:String){
-        print("Kişi Kaydet: \(kisi_ad) - \(kisi_tel)")
+        let yeniKisi:[String:Any] = ["kisi_id":"","kisi_ad":kisi_ad,"kisi_tel":kisi_tel]
+        collectionKisiler.document().setData(yeniKisi)
     }
     func guncelle(kisi_id:String,kisi_ad:String,kisi_tel:String) {
-        print("Kişi Günceller : \(kisi_id) - \(kisi_ad) - \(kisi_tel)")
+        let guncellenenKisi:[String:Any] = ["kisi_ad":kisi_ad,"kisi_tel":kisi_tel]
+        collectionKisiler.document(kisi_id).updateData(guncellenenKisi)
     }
     func sil(kisi_id:String) {
-        print("Kişi Sil : \(kisi_id)")
-        kisileriYukle()
+        collectionKisiler.document(kisi_id).delete()
+        
     }
     
     func ara(aramaKelimesi:String) {
-        print("Kişi Ara: \(aramaKelimesi)")
+        collectionKisiler.addSnapshotListener { snapshot, error in
+            var liste = [Kisiler]()
+            if let documents = snapshot?.documents {
+                for document in documents {
+                    let data = document.data()
+                    let kisi_id = document.documentID
+                    let kisi_ad = data["kisi_ad"] as? String ?? ""
+                    let kisi_tel = data["kisi_tel"] as? String ?? ""
+                    
+                    if kisi_ad.lowercased().contains(aramaKelimesi.lowercased()) {
+                        let kisi = Kisiler(kisi_id: kisi_id, kisi_ad: kisi_ad, kisi_tel: kisi_tel)
+                        liste.append(kisi)               
+                    }
+          
+                }
+            }
+            
+            self.kisilerListesi.onNext(liste)
+        }
+       
 
     }
     
     func kisileriYukle(){
-        var liste = [Kisiler]()
-        let k1 = Kisiler(kisi_id: "1", kisi_ad: "Ahmet", kisi_tel: "1111")
-        let k2 = Kisiler(kisi_id: "2", kisi_ad: "İsmail", kisi_tel: "2222")
-        let k3 = Kisiler(kisi_id: "3", kisi_ad: "Ayşe", kisi_tel: "3333")
-        liste.append(k1)
-        liste.append(k2)
-        liste.append(k3)
-        kisilerListesi.onNext(liste)//Tetikleme
+       
+        
+        
+        collectionKisiler.addSnapshotListener { snapshot, error in
+            var liste = [Kisiler]()
+            if let documents = snapshot?.documents {
+                for document in documents {
+                    let data = document.data()
+                    let kisi_id = document.documentID
+                    let kisi_ad = data["kisi_ad"] as? String ?? ""
+                    let kisi_tel = data["kisi_tel"] as? String ?? ""
+                    
+                    let kisi = Kisiler(kisi_id: kisi_id, kisi_ad: kisi_ad, kisi_tel: kisi_tel)
+                    liste.append(kisi)
+                }
+            }
+            
+            self.kisilerListesi.onNext(liste)
+        }
+       
     }
     
 }
