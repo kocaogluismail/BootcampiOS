@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseFirestore
 import Kingfisher
 
 class Anasayfa: UIViewController {
@@ -24,9 +25,11 @@ class Anasayfa: UIViewController {
         _ = viewModel.filmlerlistesi.subscribe(onNext: { liste in
             
             self.filmlerListesi = liste
+            
             DispatchQueue.main.async {
                 self.filmlerCollectionView.reloadData()
             }
+            
            
         })
         
@@ -41,6 +44,7 @@ class Anasayfa: UIViewController {
         let itemGenislik = (ekranGenislik - 30) / 2
         tasarim.itemSize = CGSize(width: itemGenislik, height: itemGenislik*1.6)
         filmlerCollectionView.collectionViewLayout = tasarim
+        
     }
 
 
@@ -57,13 +61,13 @@ extension Anasayfa : UICollectionViewDelegate,UICollectionViewDataSource,HucrePr
         
         let hucre = collectionView.dequeueReusableCell(withReuseIdentifier: "filmlerHucre", for: indexPath) as! FilmlerHucre
       
-      
+        
+        
         if let url = URL(string: "http://kasimadalan.pe.hu/filmler_yeni/resimler/\(film.resim!)") {
             DispatchQueue.main.async {
                 hucre.imageViewFilm.kf.setImage(with: url)
             }
         }
-        
         
         hucre.labelFiyat.text = "\(film.fiyat!) ₺"
         hucre.layer.borderColor = UIColor.lightGray.cgColor

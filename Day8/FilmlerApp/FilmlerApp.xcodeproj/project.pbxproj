@@ -19,9 +19,9 @@
 		BF8D95792B5D40F2009E9514 /* Filmler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8D95782B5D40F2009E9514 /* Filmler.swift */; };
 		BF8D957B2B5D4175009E9514 /* DetaySayfa.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8D957A2B5D4175009E9514 /* DetaySayfa.swift */; };
 		BF8D957D2B5D42DA009E9514 /* FilmlerHucre.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8D957C2B5D42DA009E9514 /* FilmlerHucre.swift */; };
-		BF9A1E9B2B652B58004411CB /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = BF9A1E9A2B652B58004411CB /* Alamofire */; };
-		BF9A1E9E2B652B64004411CB /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = BF9A1E9D2B652B64004411CB /* Kingfisher */; };
-		BF9A1EA02B652BE2004411CB /* FilmlerCevap.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9A1E9F2B652BE2004411CB /* FilmlerCevap.swift */; };
+		BFDF59D52B681BA50096A15E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFDF59D42B681BA50096A15E /* GoogleService-Info.plist */; };
+		BFDF59FA2B681C200096A15E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = BFDF59F92B681C200096A15E /* FirebaseFirestore */; };
+		BFDF5A192B681CA90096A15E /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = BFDF5A182B681CA90096A15E /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,7 +38,7 @@
 		BF8D95782B5D40F2009E9514 /* Filmler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filmler.swift; sourceTree = "<group>"; };
 		BF8D957A2B5D4175009E9514 /* DetaySayfa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetaySayfa.swift; sourceTree = "<group>"; };
 		BF8D957C2B5D42DA009E9514 /* FilmlerHucre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmlerHucre.swift; sourceTree = "<group>"; };
-		BF9A1E9F2B652BE2004411CB /* FilmlerCevap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmlerCevap.swift; sourceTree = "<group>"; };
+		BFDF59D42B681BA50096A15E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,9 +46,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF9A1E9E2B652B64004411CB /* Kingfisher in Frameworks */,
+				BFDF5A192B681CA90096A15E /* Kingfisher in Frameworks */,
 				BF5D10862B602D2A00E165FD /* RxSwift in Frameworks */,
-				BF9A1E9B2B652B58004411CB /* Alamofire in Frameworks */,
+				BFDF59FA2B681C200096A15E /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +98,7 @@
 				BF8D95682B5D3FC7009E9514 /* Assets.xcassets */,
 				BF8D956A2B5D3FC7009E9514 /* LaunchScreen.storyboard */,
 				BF8D956D2B5D3FC7009E9514 /* Info.plist */,
+				BFDF59D42B681BA50096A15E /* GoogleService-Info.plist */,
 			);
 			path = FilmlerApp;
 			sourceTree = "<group>";
@@ -134,7 +135,6 @@
 			isa = PBXGroup;
 			children = (
 				BF8D95782B5D40F2009E9514 /* Filmler.swift */,
-				BF9A1E9F2B652BE2004411CB /* FilmlerCevap.swift */,
 			);
 			path = entity;
 			sourceTree = "<group>";
@@ -165,8 +165,8 @@
 			name = FilmlerApp;
 			packageProductDependencies = (
 				BF5D10852B602D2A00E165FD /* RxSwift */,
-				BF9A1E9A2B652B58004411CB /* Alamofire */,
-				BF9A1E9D2B652B64004411CB /* Kingfisher */,
+				BFDF59F92B681C200096A15E /* FirebaseFirestore */,
+				BFDF5A182B681CA90096A15E /* Kingfisher */,
 			);
 			productName = FilmlerApp;
 			productReference = BF8D955C2B5D3FC5009E9514 /* FilmlerApp.app */;
@@ -198,8 +198,8 @@
 			mainGroup = BF8D95532B5D3FC5009E9514;
 			packageReferences = (
 				BF5D10782B602D2A00E165FD /* XCRemoteSwiftPackageReference "RxSwift" */,
-				BF9A1E992B652B58004411CB /* XCRemoteSwiftPackageReference "Alamofire" */,
-				BF9A1E9C2B652B64004411CB /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				BFDF59D62B681BF70096A15E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				BFDF5A172B681CA90096A15E /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = BF8D955D2B5D3FC5009E9514 /* Products */;
 			projectDirPath = "";
@@ -216,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF8D956C2B5D3FC7009E9514 /* LaunchScreen.storyboard in Resources */,
+				BFDF59D52B681BA50096A15E /* GoogleService-Info.plist in Resources */,
 				BF8D95692B5D3FC7009E9514 /* Assets.xcassets in Resources */,
 				BF8D95672B5D3FC5009E9514 /* Main.storyboard in Resources */,
 			);
@@ -233,7 +234,6 @@
 				BF5D10922B602DA000E165FD /* AnasayfaViewModel.swift in Sources */,
 				BF8D95622B5D3FC5009E9514 /* SceneDelegate.swift in Sources */,
 				BF8D957B2B5D4175009E9514 /* DetaySayfa.swift in Sources */,
-				BF9A1EA02B652BE2004411CB /* FilmlerCevap.swift in Sources */,
 				BF8D95792B5D40F2009E9514 /* Filmler.swift in Sources */,
 				BF8D957D2B5D42DA009E9514 /* FilmlerHucre.swift in Sources */,
 				BF5D108F2B602D4D00E165FD /* FilmlerDaoRepository.swift in Sources */,
@@ -469,15 +469,15 @@
 				minimumVersion = 6.6.0;
 			};
 		};
-		BF9A1E992B652B58004411CB /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		BFDF59D62B681BF70096A15E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.8.1;
+				minimumVersion = 10.20.0;
 			};
 		};
-		BF9A1E9C2B652B64004411CB /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+		BFDF5A172B681CA90096A15E /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
 			requirement = {
@@ -493,14 +493,14 @@
 			package = BF5D10782B602D2A00E165FD /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
 		};
-		BF9A1E9A2B652B58004411CB /* Alamofire */ = {
+		BFDF59F92B681C200096A15E /* FirebaseFirestore */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = BF9A1E992B652B58004411CB /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
+			package = BFDF59D62B681BF70096A15E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
 		};
-		BF9A1E9D2B652B64004411CB /* Kingfisher */ = {
+		BFDF5A182B681CA90096A15E /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = BF9A1E9C2B652B64004411CB /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			package = BFDF5A172B681CA90096A15E /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */

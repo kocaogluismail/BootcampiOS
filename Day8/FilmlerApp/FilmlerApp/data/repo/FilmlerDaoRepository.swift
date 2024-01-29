@@ -7,27 +7,36 @@
 
 import Foundation
 import RxSwift
-import Alamofire
-import Kingfisher
+import FirebaseFirestore
 
 class FilmlerDaoRepository {
     
     var filmlerListesi = BehaviorSubject<[Filmler]>(value: [Filmler]())
+    var collectionFilmler = Firestore.firestore().collection("Filmler")
     
     func filmleriYukle() {
-        //filmlerListesi.onNext(liste)
-        AF.request("http://kasimadalan.pe.hu/filmler_yeni/tum_filmler.php",method: .get).response { response in
-            if let data = response.data {
-                do{
-                    let cevap = try JSONDecoder().decode(FilmlerCevap.self, from: data)
-                    if let liste = cevap.filmler {
-                        self.filmlerListesi.onNext(liste)
-                    }
-                }catch{
-                    print(error.localizedDescription)
+        
+        
+        
+        collectionFilmler.getDocuments() { snapshot,error in
+            var liste = [Filmler]()
+            
+            if let documents = snapshot?.documents {
+                
+                for document in documents {
+                    let data = document.data()
+                    let id = document.documentID
+                    let ad = data["ad"] as? String ?? ""
+                    let resim = data["resim"] as? String ?? ""
+                    let fiyat = data["fiyat"] as? Int ?? 0
+                    
+                let film = Filmler (id: id, ad: ad, resim: resim, fiyat: fiyat)
+                    
+                    liste.append(film)
                 }
+                
             }
-             
+            self.filmlerListesi.onNext(liste)
         }
     }
 }
